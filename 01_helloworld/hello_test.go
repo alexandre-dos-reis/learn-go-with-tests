@@ -20,14 +20,20 @@ func TestBonjour(t *testing.T) {
 	}
 
 	t.Run("dire bonjour aux personnes", func(t *testing.T) {
-		resultat := Bonjour("Chris")
+		resultat := Bonjour("Chris", "French")
 		attendu := "Bonjour, Chris"
 		verifierMessageCorrect(t, resultat, attendu)
 	})
 
 	t.Run("dire 'Bonjour, Monde' quand une chaîne vide est fournie", func(t *testing.T) {
-		resultat := Bonjour("")
+		resultat := Bonjour("", "French")
 		attendu := "Bonjour, Monde"
+		verifierMessageCorrect(t, resultat, attendu)
+	})
+
+	t.Run("en espagnol", func(t *testing.T) {
+		resultat := Bonjour("Elodie", "Spanish")
+		attendu := "Hola, Elodie"
 		verifierMessageCorrect(t, resultat, attendu)
 	})
 }
