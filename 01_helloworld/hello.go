@@ -1,5 +1,7 @@
 // https://goosegeesejeez.gitbook.io/apprendre-go-par-les-tests/fondamentaux-de-go/hello-world
-package main
+package hello
+
+// NOTE: Go source files can only have one package per directory. Make sure that your files are organised into their own packages.
 
 const (
 	english = "English"
