@@ -3,8 +3,24 @@ package main
 
 import "fmt"
 
+const (
+	anglais  = "Anglais"
+	francais = "Français"
+	espagnol = "Espagnol"
+)
+
+const (
+	prefixeSalutAnglais  = "Hello, "
+	prefixeSalutFrancais = "Bonjour, "
+	prefixeSalutEspagnol = "Hola, "
+)
+
 func Bonjour(name string) string {
-	return "Bonjour, " + name
+	if name == "" {
+		name = "Monde"
+	}
+
+	return prefixeSalutFrancais + name
 }
 
 func main() {
