@@ -31,9 +31,21 @@ func TestBonjour(t *testing.T) {
 		verifierMessageCorrect(t, resultat, attendu)
 	})
 
+	t.Run("en francais", func(t *testing.T) {
+		resultat := Bonjour("Elodie", "French")
+		attendu := "Bonjour, Elodie"
+		verifierMessageCorrect(t, resultat, attendu)
+	})
+
 	t.Run("en espagnol", func(t *testing.T) {
 		resultat := Bonjour("Elodie", "Spanish")
 		attendu := "Hola, Elodie"
+		verifierMessageCorrect(t, resultat, attendu)
+	})
+
+	t.Run("en anglais", func(t *testing.T) {
+		resultat := Bonjour("Elodie", "English")
+		attendu := "Hello, Elodie"
 		verifierMessageCorrect(t, resultat, attendu)
 	})
 }
